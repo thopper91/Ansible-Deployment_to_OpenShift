@@ -15,7 +15,7 @@ $ pip list  # Check to see it has successfully installed
 ## Documentation
 For the file and folder structures, please see the Wiki section for further documentation:
 
-[Home of the Wikis](../wiki)
+[Home of the Wikis](https://github.com/thopper91/Ansible-Deployment_to_OpenShift/wiki)
 
 ## Playbooks
 These playbooks are within the roles section, they are broken down into individual tasks so they can be re-used be a 'higher' playbook. This 'higher playbook' is on the root repository level, which allows us to add multiple roles within it to produce a singular task.
