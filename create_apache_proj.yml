@@ -1,0 +1,6 @@
+---
+- hosts: openshift_master
+  become: true
+  roles:
+    - {role: Login to account}
+    - {role: Create Apache project with pods}

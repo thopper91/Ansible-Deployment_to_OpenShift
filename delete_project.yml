@@ -1,0 +1,8 @@
+---
+- hosts: openshift_master
+  become: true
+  roles:
+    - {role: Get to project}
+    - {role: Delete Deployment & Pods} 
+    - {role: Delete Service}
+    - {role: Delete Project}

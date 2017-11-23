@@ -1,0 +1,28 @@
+---
+- name: Create "{{ proj_name }}" Project
+  oc:
+    state: present
+    inline:
+      kind: ProjectRequest
+      metadata:
+        name: "{{ proj_name }}"
+      displayName: "{{ proj_display_name }}"
+      description: "{{ description }}"
+    validate_certs: false 
+    token: "{{ token }}"
+  register: "{{ register_name }}"
+
+- name: Add project role Admin to a user
+  oc:
+    state: present
+    inline:
+      kind: RoleBinding
+      metadata:
+        name: admin
+        namespace: "{{ proj_name }}"
+      roleRef:
+        name: admin
+      userNames:
+        - "{{ username }}"
+    validate_certs: false 
+    token: "{{ token }}"

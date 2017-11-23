@@ -1,0 +1,4 @@
+---
+- name: Create a new application
+  command: oc new-app "{{ app_name }}"
+  ignore_errors: true

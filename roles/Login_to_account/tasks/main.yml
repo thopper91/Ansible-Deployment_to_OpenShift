@@ -1,0 +1,4 @@
+---
+- name: Login to the {{ username }} account
+  command: oc login -u "{{ username }}" -p "{{ password }}"
+  ignore_errors: true

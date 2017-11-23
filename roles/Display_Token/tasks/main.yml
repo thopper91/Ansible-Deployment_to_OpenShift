@@ -1,0 +1,6 @@
+---
+- name: Gather token
+  command: oc whoami -t
+  register: oc_token
+
+- debug: var=oc_token.stdout

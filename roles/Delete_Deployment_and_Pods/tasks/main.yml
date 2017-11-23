@@ -1,0 +1,3 @@
+---
+- name: Delete deployment & pods from {{ service }}
+  command: oc delete dc "{{ service }}"

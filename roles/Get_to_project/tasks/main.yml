@@ -1,0 +1,3 @@
+---
+- name: Use the {{ proj_name }} project
+  command: oc project "{{ proj_name }}"

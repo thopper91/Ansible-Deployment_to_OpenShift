@@ -1,0 +1,48 @@
+---
+- name: Gather token
+  command: oc whoami -t
+  register: ocp_token
+
+- set_fact: oc_token="{{ ocp_token.stdout }}"
+
+- name: Create "{{ proj_name }}" Project
+  oc:
+    state: present
+    inline:
+      kind: ProjectRequest
+      metadata:
+        name: "{{ proj_name }}"
+      displayName: "{{ proj_display_name }}"
+      description: "{{ description }}"
+    validate_certs: false 
+    token: "{{ oc_token }}"
+  register: "{{ register_name }}"
+
+- name: Add project role Admin to a user
+  oc:
+    state: present
+    inline:
+      kind: RoleBinding
+      metadata:
+        name: admin
+        namespace: "{{ proj_name }}"
+      roleRef:
+        name: admin
+      userNames:
+        - "{{ username }}"
+    validate_certs: false 
+    token: "{{ oc_token }}"
+
+- name: Use the {{ proj_name }} project
+  command: oc project "{{ proj_name }}"
+
+#- name: Edit policy to Project
+#  command: oadm policy add-scc-to-user anyuid -z default
+#  ignore_errors: true
+
+- name: Create a new application
+  command: oc new-app "{{ app_name }}"
+  ignore_errors: true
+
+- name: Assign External IP to {{ service }}
+  command: oc expose service "{{ service }}" -l name="{{ name }}"

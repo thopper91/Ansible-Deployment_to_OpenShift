@@ -1,0 +1,16 @@
+---
+description: 'Using Ansible machine to deploy Jenkins into Openshift'
+
+proj_display_name: 'Jenkins_Ansible' #Cannot have spaces
+
+proj_name: 'jenkinsproj' #This NEEDS to be lower case otherwise it will fail
+
+register_name: 'Jenkins' #This is so we can reference for later
+
+username: 'thopper91'
+
+app_name: 'jenkins'
+
+service: 'jenkins'
+
+name: 'Jenkins-Route'

@@ -1,0 +1,7 @@
+{
+    "ip":"OPENSHIFT_IP_OR_HOSTNAME",
+    "credentials": {
+        "userName":"USERNAME",
+        "password":"PASSWORD"
+        },
+}

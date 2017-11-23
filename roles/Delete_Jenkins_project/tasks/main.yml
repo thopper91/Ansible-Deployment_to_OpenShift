@@ -1,0 +1,12 @@
+---
+- name: Use the {{ proj_name }} project
+  command: oc project "{{ proj_name }}"
+
+- name: Delete deployment & pods from {{ service }}
+  command: oc delete dc "{{ service }}"
+
+- name: Delete {{ service }} service
+  command: oc delete svc "{{ service }}"
+
+- name: Delete {{ proj_name }} project
+  command: oc delete project "{{ proj_name }}"

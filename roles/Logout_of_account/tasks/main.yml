@@ -1,0 +1,6 @@
+---
+- name: Ensure user is logged out
+  command: oc logout
+  register: oc_login
+  run_once: true
+  ignore_errors: true

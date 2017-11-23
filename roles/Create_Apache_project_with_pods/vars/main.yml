@@ -1,0 +1,16 @@
+---
+description: 'Trying to deploy Apache successfully via Ansible'
+
+proj_display_name: 'Test_Apache' #Cannot have spaces
+
+register_name: 'Apache_Test' #This is so we can reference for later
+
+username: 'thopper91'
+
+proj_name: 'apache-project' #This NEEDS to be lower case otherwise it will fail
+
+app_name: 'library/httpd'
+
+service: 'httpd'
+
+name: 'HTTPD'

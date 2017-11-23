@@ -1,0 +1,3 @@
+---
+- name: Delete {{ proj_name }} project
+  command: oc delete project "{{ proj_name }}"

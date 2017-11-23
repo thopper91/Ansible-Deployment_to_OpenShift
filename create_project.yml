@@ -1,0 +1,8 @@
+---
+- hosts: openshift_master
+  become: true
+  roles:
+    - {role: Create Project}
+    - {role: Get to project}
+    - {role: Deploy an Image}
+    - {role: Assign External IP to Image}

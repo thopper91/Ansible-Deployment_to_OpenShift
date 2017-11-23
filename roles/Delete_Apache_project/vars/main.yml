@@ -1,0 +1,3 @@
+---
+service: 'httpd'
+proj_name: 'apache-project'

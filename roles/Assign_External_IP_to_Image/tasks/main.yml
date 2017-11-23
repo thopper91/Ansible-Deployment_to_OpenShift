@@ -1,0 +1,4 @@
+---
+- name: Assign External IP to {{ service }}
+  command: oc expose service "{{ service }}" -l name="{{ name }}"
+
