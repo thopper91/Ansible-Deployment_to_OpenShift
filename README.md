@@ -4,6 +4,8 @@
 This project will display how we can automatically: Create Projects, Deploy an Image, assign external IPs and to remove them all also within the Openshift testing environment
 
 ## Pre-Requisites
+
+### Environment
 1) A deployed Openshift Environment
 2) Linux machine (we are using Ubuntu Server 17.04)
 3) Ansible installed on Linux machine
@@ -12,6 +14,12 @@ $ sudo apt-get install libssl-dev
 $ sudo pip install ansible
 $ pip list  # Check to see it has successfully installed
 ```
+
+### SSH Key 
+Also we need to copy our SSH key over to the remote server node in order for our playbooks to actually work. Remember we should only copy our public key, so the one with the extension of '.pub'. We need to use the ``` ssh-copy-id``` function like: 
+
+``` ssh-copy-id -i ~/.ssh/my_key.pub hoppert@required.domain ```
+
 ## Documentation
 For the file and folder structures, please see the Wiki section for further documentation:
 
